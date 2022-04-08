@@ -1,0 +1,10 @@
+
+
+.lista-produtos{
+    display: flex;
+    flex-direction: row;
+    width: 315px;
+    overflow-x: scroll;
+    padding: 0;
+    border: 1px solid red;
+}
