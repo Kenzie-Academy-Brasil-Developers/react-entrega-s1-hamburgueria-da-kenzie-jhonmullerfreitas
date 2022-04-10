@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+  background: #F5F5F5;
 }
 
 .App-logo {
@@ -44,7 +50,7 @@
   align-items: center;
   justify-content: center;
   width: 320px;
-  border: 1px solid red;
+  background: #F5F5F5;
 }
 
 .burguer{
@@ -63,14 +69,18 @@
 .kenzie{
   box-sizing: border-box;
   margin-left: 5px;
+  font-size: 12px;
+  height: 5px;
   color: #EB5757;
 }
 
 .formulario{
   box-sizing: border-box;
-  width: 382px;
-  /* border: 1px solid red; */
-
+  width: 315px;
+  background: #FFFFFF;
+  margin-bottom: 10px;
+  border: 2px solid #E0E0E0;
+  border-radius: 8px;
 }
 
 .formulario>input{
@@ -78,7 +88,7 @@
   height: 60px;
   background-color: #FFFFFF;;
   border-radius: 8px;
-  border: 3px solid #E0E0E0;
+  border: 3px solid transparent;
   
 }
 
@@ -93,3 +103,278 @@
   color: #FFFFFF;
 }
 
+.resultado-busca{
+  box-sizing: border-box;
+  height: 34px;
+  width: 254px;
+  margin: 30px 17px 26px 0;
+  font-size: 20px;
+  line-height: 34px;
+  font-weight: 700;
+  color: #333333;
+}
+
+.resultado-busca>span{
+
+  color: #828282;
+}
+
+@media (min-width: 480px) {
+  
+
+  .cabecalho-filtro{
+    width: 480px;
+    /* background-color: red; */
+  }
+
+  .formulario{
+    width: 415px;
+  }
+
+  .formulario>input{
+    box-sizing: border-box;
+    width: 250px;
+    margin-right: 20px;
+  }
+
+  .burguer{
+    font-size: 30px;
+  }
+
+  .kenzie{
+    font-size: 20px;
+    height: 20px;
+  }
+
+}
+
+@media (min-width: 768px){
+  .cabecalho-filtro{
+    /* border: 1px solid red; */
+    width: 768px;
+  }
+
+  .formulario{
+    width: 650px;
+  }
+
+  .formulario>input{
+    box-sizing: border-box;
+    width: 450px;
+    margin-right: 40px;
+    font-size: 16px;
+  }
+
+  .formulario>button{
+    font-size: 16px;
+  }
+
+  .burguer{
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  .kenzie{
+    font-size: 25px;
+    height: 20px;
+  }
+}
+
+@media (min-width: 1024px){
+
+  .App{
+    width: 1600px;
+    height: 852px;
+  }
+
+  .products-and-cart{
+    display: flex;
+    justify-content: space-around;
+    width: 1600px;
+    height: 772px;
+    background-color: #FFFFFF;
+    
+  }
+
+  .cabecalho-filtro{
+    width: 1600px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #F5F5F5;
+    
+  }
+  
+  .burguer{
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-left: 109px;
+  }
+  .kenzie{
+    font-size: 16px;
+    height: 16px;
+  }
+
+  .formulario{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 365px;
+    height: 60px;
+    margin-right: 115px;
+    margin-top: 10px;
+    
+  }
+
+  .formulario>input{
+    box-sizing: border-box;
+    width: 250px;
+    height: 30px;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-left: 5px;
+    
+  }
+
+  .formulario>button{
+    box-sizing: border-box;
+    width: 90px;
+    height: 30px;
+    font-size: 16px;
+    /* border: 1px solid black; */
+  }
+
+}
+
+@media (min-width: 1440px){
+  .App{
+    width: 1440px;
+  }
+
+  .products-and-cart{
+    display: flex;
+    justify-content: space-around;
+    width: 1440px;
+    background-color: #FFFFFF;
+  }
+
+  .cabecalho-filtro{
+    width: 1440px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #F5F5F5;
+    
+  }
+  
+  .burguer{
+    font-size: 25px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+  }
+  .kenzie{
+    font-size: 16px;
+    height: 16px;
+  }
+
+  .formulario{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 365px;
+    height: 60px;
+    margin-right: 100px;
+    margin-top: 10px;
+    
+  }
+
+  .formulario>input{
+    box-sizing: border-box;
+    width: 250px;
+    height: 40px;
+    font-size: 18px;
+    margin-right: 5px;
+    margin-left: 5px;
+    
+  }
+
+  .formulario>button{
+    box-sizing: border-box;
+    width: 95px;
+    height: 40px;
+    font-size: 18px;
+    margin-right: 10px;
+    /* border: 1px solid black; */
+  }
+}
+
+
+@media (min-width: 2560px){
+  .App{
+    width: 2560px;
+  }
+
+  .products-and-cart{
+    display: flex;
+    justify-content: space-around;
+    width: 2560px;
+    background-color: #FFFFFF;
+  }
+
+  .cabecalho-filtro{
+    width: 2560px;
+    height: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #F5F5F5;
+    
+  }
+  
+  .burguer{
+    box-sizing: border-box;
+    font-size: 60px;
+    margin-bottom: 50px;
+    margin-left: 200px;
+    width: 400px;
+  }
+  .kenzie{
+    font-size: 40px;
+    height: 30px;
+  }
+
+  .formulario{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 700px;
+    height: 100px;
+    margin-right: 100px;
+    margin-top: 10px;
+    
+  }
+
+  .formulario>input{
+    box-sizing: border-box;
+    width: 500px;
+    height: 80px;
+    font-size: 35px;
+    margin-right: 5px;
+    margin-left: 5px;
+    
+  }
+
+  .formulario>button{
+    box-sizing: border-box;
+    width: 200px;
+    height: 80px;
+    font-size: 35px;
+    margin-right: 10px;
+    /* border: 1px solid black; */
+  }
+}

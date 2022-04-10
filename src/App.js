@@ -24,17 +24,26 @@ function App() {
   }
 
   function remove(productId){
-    console.log(productId);
-    const productAdd = currentSale.filter((item, index)=> index !== productId)
-    // console.log(productAdd)
-    const total = productAdd.reduce((cont, prox)=> cont + prox.price,0)
-    setCurrentSale(productAdd)
+    let n;
+    for(let i=0; i<currentSale.length; i++){
+      if(currentSale[i].id === Number(productId)){
+        n = i;
+      }
+    }
+
+    const newList = []
+    for(let j=0; j<currentSale.length; j++){
+      if(j !== n){
+        newList.push(currentSale[j])
+      }
+    }
+
+    const total = newList.reduce((cont, prox)=> cont + prox.price,0)
+    setCurrentSale(newList)
     setCartTotal(total)
   }
 
   function showProducts(){
-
-  
     setShowFilter(true)
     const filtrado = products.filter((item)=> item.category === busca);
     const pornome = products.filter((item)=> item.name === busca);
@@ -47,16 +56,13 @@ function App() {
     }
   }
   
-  console.log(currentSale);
-  // console.log(cartTotal)
+  
 
   return (
     <div className="App">
-
-
       <div className='cabecalho-filtro'>
 
-        <p className='burguer'>Burguer<span className='kenzie'>Kenzie</span> </p>
+        <p className='burguer' onClick={()=>setShowFilter(false)} >Burguer<span className='kenzie'>Kenzie</span> </p>
 
         <form className='formulario' onSubmit={(e)=> e.preventDefault()} >
             <input type="text" placeholder="Digitar pesquisa" value={busca} onChange={(event)=> setBusca(event.target.value)} ></input>
@@ -64,16 +70,17 @@ function App() {
         </form>
 
       </div>
-
-      <div>
-      {
-        showFilter ?  <ProductsList products={filteredProducts} callback={handleClick} /> : <ProductsList products={products} callback={handleClick} />
-      }
+      <div className='products-and-cart'>
+        <div>
+          {showFilter? <span className='resultado-busca'>Resultados para: <span>{busca}</span></span> : <span></span> }
+          {
+            showFilter ?  <ProductsList products={filteredProducts} callback={handleClick} /> : <ProductsList products={products} callback={handleClick} />
+          }
+        </div>
+        <Cart products={products} currentSales={currentSale} setCurrentSales={setCurrentSale} total={cartTotal} callback={remove} setCartTotal={setCartTotal} />
       </div>
 
-      <Cart currentSales={currentSale} setCurrentSales={setCurrentSale} total={cartTotal} callback={remove} />
-      {/* <p>R$ {cartTotal.toFixed(2)}</p> */}
-      
+    
     </div>
   );
 }
